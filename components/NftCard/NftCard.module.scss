@@ -1,0 +1,174 @@
+@import '@/styles/__settings.scss';
+
+.nftCard {
+  background-color: $cardBackground;
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
+  border-radius: 15px;
+  max-width: toRem(327);
+
+  @include desktop() {
+    max-width: toRem(350);
+  }
+
+  .cardContent {
+    padding: toRem(24);
+
+    .image {
+      position: relative;
+      display: flex;
+      @include center();
+      overflow: hidden;
+      background-image: url('../../public/image-equilibrium.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: toRem(8);
+      width: toRem(278);
+      height: toRem(278);
+
+      @include desktop() {
+        width: toRem(302);
+        height: toRem(302);
+
+        &:hover {
+          cursor: pointer;
+          &::before,
+          &::after {
+            display: flex;
+            @include center();
+            background-color: rgba(0, 255, 248, 0.5);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: url('../../public/icon-view.svg');
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+    .content {
+      padding: 0;
+      margin-top: toRem(24);
+      display: flex;
+      flex-direction: column;
+      gap: toRem(14);
+
+      .title {
+        font-weight: 600;
+        font-size: toRem(22);
+        line-height: toRem(28);
+        color: $white;
+
+        &:hover {
+          color: $cyan;
+          cursor: pointer;
+        }
+      }
+
+      .subTitle {
+        font-weight: 300;
+        font-size: toRem(18);
+        line-height: toRem(26);
+        color: $softBlue;
+      }
+
+      .infoContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .ethereum {
+          display: flex;
+          flex-direction: row;
+          gap: toRem(6.48);
+          align-items: center;
+
+          .text {
+            font-weight: 600;
+            font-size: toRem(15);
+            line-height: toRem(19);
+            color: $cyan;
+
+            @include desktop() {
+              font-size: toRem(16);
+              line-height: toRem(20);
+            }
+          }
+        }
+
+        .time {
+          display: flex;
+          flex-direction: row;
+          gap: toRem(7.7);
+          align-items: center;
+
+          .timeText {
+            font-weight: 400;
+            font-size: toRem(15);
+            line-height: toRem(19);
+            color: $softBlue;
+
+            @include desktop() {
+              font-size: toRem(16);
+              line-height: toRem(20);
+            }
+          }
+        }
+      }
+
+      .divider {
+        width: 100%;
+        border-top: toRem(1) solid $darkBlue;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+      }
+
+      .bottom {
+        display: flex;
+        flex-direction: row;
+        gap: toRem(16);
+
+        .avatar {
+          width: toRem(33);
+          height: toRem(33);
+          border: toRem(1) solid $white;
+          border-radius: 50%;
+          background-image: url('../../public/image-avatar.png');
+          background-position: center;
+          background-size: cover;
+        }
+
+        .textContainer {
+          display: flex;
+          flex-direction: row;
+          gap: toRem(6);
+          align-items: center;
+          font-weight: 400;
+          font-size: toRem(15);
+          line-height: toRem(19);
+
+          @include desktop() {
+            font-size: toRem(16);
+            line-height: toRem(20);
+          }
+
+          .firstText {
+            color: $softBlue;
+          }
+
+          .secondText {
+            color: $white;
+
+            &:hover {
+              color: $cyan;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

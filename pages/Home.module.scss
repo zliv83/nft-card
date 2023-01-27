@@ -1,4 +1,7 @@
 @import '@/styles/__settings.scss';
 
 .page {
+  display: flex;
+  @include center();
+  min-height: 100vh;
 }
